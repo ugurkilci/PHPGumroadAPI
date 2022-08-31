@@ -1,5 +1,13 @@
 <?php
 
+function gumroadAuthLink(
+    $client_id,
+    $redirect_uri,
+    $scope
+) {
+    return "https://app.gumroad.com/oauth/authorize?client_id=$client_id&redirect_uri=$redirect_uri&scope=$scope";
+}
+
 function gumroadAccessToken(
     $clientid,
     $clientsecret,
