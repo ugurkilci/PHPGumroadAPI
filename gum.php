@@ -1,11 +1,11 @@
 <?php
 
 // Gumroaddan geldiyse
-if (@$_GET["code"]) {
-}else{ // Yok
-    echo ":ı";
-    exit;
-}
+// if (@$_GET["code"]) {
+// }else{ // Yok
+//     echo ":ı";
+//     exit;
+// }
 
 function gumLogin(
     $client_id,
@@ -98,27 +98,27 @@ $gum = gum(
 );
 
 /* Gerenal Info */
-$access_token   = $gum->access_token;
-$token_type     = $gum->token_type;
-$refresh_token  = $gum->refresh_token;
-$scope          = $gum->scope;
-$created_at     = $gum->created_at;
+$access_token   = @$gum->access_token;
+$token_type     = @$gum->token_type;
+$refresh_token  = @$gum->refresh_token;
+$scope          = @$gum->scope;
+$created_at     = @$gum->created_at;
 
 /* User Info */
 $gumUser        = gumUser($access_token);
 
-$name           = $gumUser["user"]["name"];
-$currency_type  = $gumUser["user"]["currency_type"];
-$custom_css     = $gumUser["user"]["custom_css"];
-$bio            = $gumUser["user"]["bio"];
-$twitter_handle = $gumUser["user"]["twitter_handle"];
-$id             = $gumUser["user"]["id"];
-$user_id        = $gumUser["user"]["user_id"];
-$url            = $gumUser["user"]["url"];
-$links          = $gumUser["user"]["links"];
-$profile_url    = $gumUser["user"]["profile_url"];
-$email          = $gumUser["user"]["email"];
-$display_name   = $gumUser["user"]["display_name"];
+$name           = @$gumUser["user"]["name"];
+$currency_type  = @$gumUser["user"]["currency_type"];
+$custom_css     = @$gumUser["user"]["custom_css"];
+$bio            = @$gumUser["user"]["bio"];
+$twitter_handle = @$gumUser["user"]["twitter_handle"];
+$id             = @$gumUser["user"]["id"];
+$user_id        = @$gumUser["user"]["user_id"];
+$url            = @$gumUser["user"]["url"];
+$links          = @$gumUser["user"]["links"];
+$profile_url    = @$gumUser["user"]["profile_url"];
+$email          = @$gumUser["user"]["email"];
+$display_name   = @$gumUser["user"]["display_name"];
 
 print_r($email);
 
